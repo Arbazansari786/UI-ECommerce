@@ -1,0 +1,63 @@
+<div class="container mt-3">
+    <div>
+        <div class="row d-flex justify-content-center">
+            <div class="col-1 d-flex align-self-center darkBg " style="height: 50%;">
+                <span class="darkText"> Lorem Lorem ipsum dolor sit amet consectetur adipisicing elit. Beatae provident quod minus libero necessitatibus rerum </span>
+            </div>
+            <div class="col-4 bgColor borderDark" >
+                <div class=" p-5" >
+                    <form #loginForm="ngForm"  (ngSubmit)="registerUser()">
+                        <label class="lead textColor" for="">Email</label>
+                        <input [(ngModel)]="user.userEmail" name="userEmail" type="text" class="form-control "
+                            placeholder="Enter your email">
+                        <label class="lead textColor" for="">FirstName</label>
+                        <input [(ngModel)]="user.userFirstName" name="userFirstName" type="text" class="form-control"
+                            placeholder="Enter your first Name">
+                            <label class="lead textColor" for="">lastName</label>
+                            <input [(ngModel)]="user.userLastName" name="userLastName" type="text" class="form-control"
+                                placeholder="Enter your last name">
+                        <label class="lead textColor" for="">Password</label>
+                        <input [(ngModel)]="user.userPassword" name="userPassword" type="password"
+                            class="form-control " placeholder="Enter your password">
+                        <label class="lead textColor" for="">Mobile No</label>
+                        <input [(ngModel)]="user.userMobileNo" name="userMobileNo" type="text"
+                                class="form-control " placeholder="Enter your Mobile no">
+                        <label class="lead textColor" for="">City</label>
+                        <input [(ngModel)]="user.userCity" name="userCity" type="text"
+                            class="form-control " placeholder="Enter your City">
+                        <button type="submit" class="form-control  btnColor mt-3">Register</button>
+                    </form>
+                </div>
+            </div>
+            
+            <div class="col-4  d-flex align-self-center darkBg " style="height: 20%;">
+                <div class="row">
+                    <div>
+                        <h3 class="whiteText fw-bold d-flex justify-content-center mt-5">Sign Up</h3>
+                        <strong class=" whiteText lead d-flex justify-content-center">Sign up and get exciting offers</strong>
+                        <em class=" whiteText lead d-flex justify-content-bottom m-5">*By signing up, you're stumpdown permission to send email updates.</em>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+<!-- <div class="loginBg" >
+    <div class="container mt-5 ">
+        <div class="row d-flex justify-content-center  align-item-center ">
+            <div class="col-6 ">
+                <div class="card text-center p-5">
+                    <form #loginForm="ngForm" >
+                        <input [(ngModel)]="user.userEmail" name="userName" type="text" class="form-control mb-3"
+                            placeholder="Enter your username">
+                        <input [(ngModel)]="user.userFirstName" name="userName" type="text" class="form-control mb-3"
+                            placeholder="Enter your username">
+                        <input [(ngModel)]="user.userPassword" name="password" type="password"
+                            class="form-control mb-3" placeholder="Enter your password">
+                        <button type="submit" class="form-control btn btn-primary">Register</button>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </div>
+</div> -->

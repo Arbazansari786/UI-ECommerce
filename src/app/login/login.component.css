@@ -1,0 +1,24 @@
+.loginBg{
+    /* background-image: url(../../assets/Images/loginBg.jpg); */
+    background-image: url(https://www.istockphoto.com/photo/shopping-online-concept-parcel-or-paper-cartons-with-a-shopping-cart-logo-in-a-gm1249219777-364025986?utm_source=pixabay&utm_medium=affiliate&utm_campaign=SRP_image_sponsored&utm_content=https%3A%2F%2Fpixabay.com%2Fimages%2Fsearch%2Fe-commerce%2F&utm_term=e+commerce);
+    background-size:100vh;
+    background-repeat: no-repeat;
+    background-attachment: fixed;
+   
+}
+
+.textColor{
+    color: #97765d;
+}
+.bgColor{
+    background-color: #fcf8ee;
+}
+.btnColor{
+    background-color: #97765d;
+    color: white;
+    border: none;
+}
+.whiteButton{
+    background-color: white;
+    color: #97765d;
+}

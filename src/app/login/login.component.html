@@ -1,0 +1,46 @@
+<div class="loginBg" >
+    <div class="container mt-5 ">
+        <div class="div">
+            <div class="row d-flex justify-content-center">
+                <div class="col-4 bgColor borderColor" style=" border-radius: 8px 0px 0px 8px;">
+                    <h3 class="textColor fw-bold d-flex justify-content-center mt-3">LOGIN</h3>
+                    <small class=" textColor lead d-flex justify-content-center">Welcome back !</small>
+                    <div class="mt-3  m-5">
+                        <form #loginForm="ngForm" (ngSubmit)="getFormDetails()">
+                            <label class="lead textColor" for="">Email</label>
+                            <input [(ngModel)]="login.userEmail" name="userName" type="text" class="form-control mb-3"
+                                placeholder="Enter your username">
+                                <label class="lead textColor" for="">Password</label>
+                            <input [(ngModel)]="login.userPassword" name="password" type="password"
+                                class="form-control mb-3" placeholder="Enter your password">
+                            <button type="submit" class="form-control btn btnColor">Login</button>
+                            <div class="row">
+                                <a class="textColor" routerLink="/register">register</a>
+                                <a class="d-flex justify-content-end textColor" routerLink="/register">forget password?</a>
+                            </div>
+                        </form>
+                    </div>
+                </div>
+                <div class="col-4 p-0">
+                    <img style="border-radius: 0px 8px 8px 0px;" src="../../assets/Images/4.jpg" height="100%" width="100%" alt="">
+                </div>
+            </div>
+        </div>
+    </div>
+    
+    <!-- <div class="container mt-5 ">
+        <div class="row d-flex justify-content-center  align-item-center ">
+            <div class="col-6 ">
+                <div class="card text-center p-5">
+                    <form #loginForm="ngForm" (ngSubmit)="getFormDetails()">
+                        <input [(ngModel)]="login.userEmail" name="userName" type="text" class="form-control mb-3"
+                            placeholder="Enter your username">
+                        <input [(ngModel)]="login.userPassword" name="password" type="password"
+                            class="form-control mb-3" placeholder="Enter your password">
+                        <button type="submit" class="form-control btn btn-primary">Login</button>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </div> -->
+</div>

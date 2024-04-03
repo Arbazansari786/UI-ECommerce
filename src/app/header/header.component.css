@@ -1,0 +1,11 @@
+.whiteButton{
+    background-color: white;
+    color: #97765d;
+}
+.blackButton{
+    background-color: rgb(5, 5, 5);
+    color: #faf8f6;
+}
+.active{
+    font-weight: bolder;
+}

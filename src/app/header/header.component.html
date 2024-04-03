@@ -1,0 +1,36 @@
+<nav class="navbar navbar-expand-lg navbar-dark" style="background-color:#b59178">
+    <div class="container-fluid">
+      <a class="navbar-brand" href="#">Gareeb-Cart</a>
+      <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+      <div class="collapse navbar-collapse" id="navbarSupportedContent">
+        <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+          <li class="nav-item">
+            <a class="nav-link " aria-current="page" routerLink="/home"  routerLinkActive="active" [routerLinkActiveOptions]="{exact:true}" >Home</a>
+          </li> 
+
+          <li class="nav-item">
+            <a *ngIf="isRoleMatched('user')"   class="nav-link " aria-current="page" routerLink="/user"  routerLinkActive="active"  [routerLinkActiveOptions]="{exact:true}">UserDashBoard</a>
+          </li> 
+
+          <li class="nav-item">
+            <a *ngIf="isRoleMatched('admin')"  class="nav-link " aria-current="page" routerLink="/admin"  routerLinkActive="active"  [routerLinkActiveOptions]="{exact:true}" >AdminDashBoard</a>
+          </li> 
+
+          <li class="nav-item">
+            <a *ngIf="isRoleMatched('admin')"  class="nav-link " aria-current="page" routerLink="/addNewProduct"  routerLinkActive="active"   [routerLinkActiveOptions]="{exact:true}">Add New Product</a>
+          </li> 
+
+          <li class="nav-item">
+            <a *ngIf="isRoleMatched('admin')"  class="nav-link " aria-current="page" routerLink="/ShowAllProducts"  routerLinkActive="active"  [routerLinkActiveOptions]="{exact:true}" >All Products</a>
+          </li> 
+
+        
+
+        </ul>
+      </div>
+      <button  *ngIf="!isLogged()" type="button" class="btn whiteButton fw-bold" style="border-radius: 10px;" routerLink="/login"  routerLinkActive="active"   [routerLinkActiveOptions]="{exact:true}">Login</button>
+      <button *ngIf="isLogged()" (click)="logOut()"  type="button" class="btn blackButton fw-bold" style="border-radius: 10px;"   routerLinkActive="active"  [routerLinkActiveOptions]="{exact:true}">Logout</button>
+    </div>
+  </nav>

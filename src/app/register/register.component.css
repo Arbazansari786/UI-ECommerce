@@ -1,0 +1,28 @@
+.textColor{
+    color: #97765d;
+}
+.bgColor{
+    background-color: #fcf8ee;
+}
+.btnColor{
+    background-color: #97765d;
+    color: white;
+    border: none;
+}
+.whiteButton{
+    background-color: white;
+    color: #97765d;
+}
+.whiteText{
+    color: #fcf8ee;
+}
+.darkBg{
+    background-color: #785f5a;
+}
+.darkText{
+    color:#785f5a ;
+}
+.borderDark{
+    border: solid;
+    border-color: #97765d;
+}
