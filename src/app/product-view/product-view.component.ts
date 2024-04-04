@@ -2,9 +2,10 @@ import { Component,OnInit } from '@angular/core';
 import { ActivatedRoute, Router } from '@angular/router';
 import { Product } from '../_model/product';
 import { ProductService } from '../_service/product.service';
-import { error } from 'console';
+import { error, log } from 'console';
 import { ImageProcessingService } from '../_service/image-processing.service';
 import { map } from 'rxjs';
+import { connect } from 'net';
 
 @Component({
   selector: 'app-product-view',
@@ -32,6 +33,15 @@ export class ProductViewComponent implements OnInit {
 
   changeIndex(i:number){
     this.selectIndex=i;
+  }
+
+  buyProduct(productId:any){
+    console.log("buy product ts");
+    
+
+    this.router.navigate(['/buyProduct',{
+      isSingleProductCheckout:true,id:productId
+    }]);
   }
 
 

@@ -16,8 +16,8 @@ import { Role } from '../_model/role';
 export class LoginComponent {
 
   login:Login={
-    userEmail:"ansariarbaz720@gmail.com",
-    userPassword:"Arbaz@2001"
+    userEmail:"admin001@gmail.com",
+    userPassword:"Admin123"
   }
 
   constructor(private userService:UserService,private userAuth:UserAuthService,private router:Router){

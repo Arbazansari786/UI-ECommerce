@@ -31,6 +31,7 @@ import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { MatDialogModule } from '@angular/material/dialog';
 import { AuthGuardService } from './_service/auth-guard.service';
 import { AuthInterceptorService } from './_service/auth-interceptor.service';
+import { BuyProductComponent } from './buy-product/buy-product.component';
 
 
 
@@ -49,7 +50,8 @@ import { AuthInterceptorService } from './_service/auth-interceptor.service';
     DragDirective,
     ShowImageDialogComponent,
     ProductViewComponent,
-    ShowAllProductComponent
+    ShowAllProductComponent,
+    BuyProductComponent
     
   ],
   imports: [
