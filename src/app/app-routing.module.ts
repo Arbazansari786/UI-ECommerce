@@ -11,56 +11,71 @@ import { AddNewProductComponent } from './add-new-product/add-new-product.compon
 import { ProductViewComponent } from './product-view/product-view.component';
 import { ShowAllProductComponent } from './show-all-product/show-all-product.component';
 import { ProductResolveService } from './product-resolve.service';
+import { BuyProductComponent } from './buy-product/buy-product.component';
+import { resolve } from 'path';
+import { BuyProductResolverService } from './_service/buy-product-resolver.service';
 
 const routes: Routes = [
+  {
+    path: 'buyProduct',
+    component: BuyProductComponent,
+    canActivate: [AuthGuardService], data: { roles: ['User'] },
+    resolve: {
+      productDetails: BuyProductResolverService
+    }
+  },
 
   {
-    path:"register",
-    component:RegisterComponent,
-    canDeactivate:[AuthGuardService]
+    path: "register",
+    component: RegisterComponent,
+    canDeactivate: [AuthGuardService]
   },
-{
-  path:"home",
-  component:HomeComponent
-},
+  {
+    path: "home",
+    component: HomeComponent
+  },
 
-{
-  path:"",
-  component:HomeComponent
-},
-{
-  path:"login",
-  component:LoginComponent
-},
-{path:'addNewProduct',component:AddNewProductComponent,canActivate:[AuthGuardService],data:{roles:['admin']},
+  {
+    path: "",
+    component: HomeComponent
+  },
+  {
+    path: "login",
+    component: LoginComponent
+  },
+  {
+    path: 'addNewProduct', component: AddNewProductComponent, canActivate: [AuthGuardService], data: { roles: ['admin'] },
+
+  },
+  { path: 'ShowAllProducts', component: ShowAllProductComponent },
+  {
+    path: 'productView', component: ProductViewComponent, resolve: { product: ProductResolveService },
+  },
+
+
+  {
+    path: "user",
+    component: UserComponent,
+    canActivate: [AuthGuardService],
+    data: { roles: ["user"] }
+  },
+  {
+    path: "admin",
+    component: AdminComponent,
+    canActivate: [AuthGuardService],
+    data: { roles: ["admin"] }
+  },
+  {
+    path: "forbidden",
+    component: ForbiddenComponent
+  },
+
+  {
+    path: "**",
+    component: ForbiddenComponent
+  }
   
-},
-{path:'ShowAllProducts', component:ShowAllProductComponent},
-{path:'productView',component:ProductViewComponent,    resolve: { product: ProductResolveService },
-},
 
-
-{
-  path:"user",
-  component:UserComponent,
-  canActivate:[AuthGuardService],
-  data:{roles:["user"]}
-},
-{
-  path:"admin",
-  component:AdminComponent,
-  canActivate:[AuthGuardService],
-  data:{roles:["admin"]}
-},
-{
-  path:"forbidden",
-  component:ForbiddenComponent
-},
-
-{
-  path:"**",
-  component:ForbiddenComponent
-},
 
 
 
