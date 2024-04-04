@@ -37,4 +37,8 @@ export class ProductService {
    return this.httpClient.get<Product>(this.base_url+"/product/"+id);
   }
 
+  public getProductDetails(isSingleProductCheckout:any,productId:any){
+    return this.httpClient.get<Product[]>(this.base_url+"/getProductDetails/"+isSingleProductCheckout+"/"+productId)
+  }
+
 }
