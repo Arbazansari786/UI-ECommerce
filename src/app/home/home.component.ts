@@ -38,10 +38,11 @@ export class HomeComponent {
   public getAllProducts() {
     this.productService.getAllProduct()
     .pipe(
-      map((x: Product[], i) => x.map((product: Product) => this.imageProcessingService.createImages(product)))
+      map((products:Product[])=>products.map((product:Product)=>this.imageProcessingService.createImages(product)))
     )
     .subscribe(
       (resp: Product[]) => {
+        console.log("Home Component")
         console.log(resp);
         // if(resp.length == 12) {
         //   this.showLoadButton = true;
@@ -49,6 +50,7 @@ export class HomeComponent {
         //   this.showLoadButton = false;
         // }
         resp.forEach( (p:Product) => this.productDetails.push(p));
+       
       }, (error: HttpErrorResponse) => {
         console.log(error);
       }

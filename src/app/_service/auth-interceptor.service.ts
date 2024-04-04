@@ -17,7 +17,7 @@ export class AuthInterceptorService implements HttpInterceptor{
             return next.handle(req.clone());
         }
         const token=this.userAuth.getJwtToken();
-        console.log(token);
+        console.log("token"+token);
         if(token!=null){
         req=this.addToken(req,token);
         }
