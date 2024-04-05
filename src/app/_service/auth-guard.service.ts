@@ -12,11 +12,11 @@ export class AuthGuardService implements CanActivate,CanDeactivate<RegisterCompo
 
   public isRoleMatched(matchingRole:string[]):boolean{
    const roles:Role[]=this.userAuth.getRoles();
-
+    
    for(let i=0;i<roles.length;i++){
      let roleName=roles[i].roleName.toLowerCase();
     for(let j=0;j<matchingRole.length;j++){
-      if(roleName===matchingRole[j])
+      if(roleName===matchingRole[j].toLowerCase())
         return true;
     }
    }

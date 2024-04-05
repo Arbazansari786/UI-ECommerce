@@ -1,5 +1,5 @@
-import { Injectable } from '@angular/core';
-import { ActivatedRouteSnapshot, Resolve, RouterStateSnapshot } from '@angular/router';
+import { Injectable, inject } from '@angular/core';
+import { ActivatedRoute, ActivatedRouteSnapshot, Resolve, RouterStateSnapshot } from '@angular/router';
 import { Observable, of } from 'rxjs';
 import { Product } from './_model/product';
 import { ProductService } from './_service/product.service';
@@ -13,11 +13,16 @@ export class ProductResolveService implements Resolve<Product> {
   constructor(private productService: ProductService,
     private imageProcessingService: ImageProcessingService) {}
 
+
+
   resolve(
     route: ActivatedRouteSnapshot,
-    state: RouterStateSnapshot
+    state: RouterStateSnapshot,
+    
   ): Observable<Product> {
     const id = route.paramMap.get("productId");
+    console.log("id is"+id);
+    
 
     if (id) {
       //then we have to fetch details from backend

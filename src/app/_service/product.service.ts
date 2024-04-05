@@ -38,7 +38,9 @@ export class ProductService {
   }
 
   public getProductDetails(isSingleProductCheckout:any,productId:any){
-    return this.httpClient.get<Product[]>(this.base_url+"/getProductDetails/"+isSingleProductCheckout+"/"+productId)
+    console.log("isSingle");
+    
+    return this.httpClient.get<Product[]>(this.base_url+"/product/getProductDetails/"+isSingleProductCheckout+"/"+productId)
   }
 
 }

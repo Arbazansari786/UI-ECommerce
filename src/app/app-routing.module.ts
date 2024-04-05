@@ -17,9 +17,9 @@ import { BuyProductResolverService } from './_service/buy-product-resolver.servi
 
 const routes: Routes = [
   {
-    path: 'buyProduct',
+    path: "buyProduct",
     component: BuyProductComponent,
-    canActivate: [AuthGuardService], data: { roles: ['User'] },
+canActivate: [AuthGuardService], data: { roles: ['User'] },
     resolve: {
       productDetails: BuyProductResolverService
     }
@@ -37,7 +37,8 @@ const routes: Routes = [
 
   {
     path: "",
-    component: HomeComponent
+    redirectTo:"home",
+    pathMatch:"full"
   },
   {
     path: "login",
