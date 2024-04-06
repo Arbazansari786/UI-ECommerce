@@ -2,6 +2,7 @@ import { HttpClient } from '@angular/common/http';
 import { Injectable } from '@angular/core';
 import { Product } from '../_model/product';
 import { Observable, of } from 'rxjs';
+import { OrderDetails } from '../_model/order-details-model';
 @Injectable({
   providedIn: 'root'
 })
@@ -41,6 +42,10 @@ export class ProductService {
     console.log("isSingle");
     
     return this.httpClient.get<Product[]>(this.base_url+"/product/getProductDetails/"+isSingleProductCheckout+"/"+productId)
+  }
+
+  public placeOrder(orderDetails:OrderDetails){
+    return this.httpClient.post(this.base_url+"/order/placeOrder",orderDetails);
   }
 
 }
