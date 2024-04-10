@@ -31,6 +31,20 @@ export class ProductViewComponent implements OnInit {
     this.selectIndex=i;
   }
 
+  addToCart(productId:any){
+    console.log(productId);
+    this.productService.addToCart(productId).subscribe(
+      (response)=>{
+        console.log(response);
+      },
+      (error)=>{
+        console.log(error);
+        
+      }
+    )
+    
+  }
+
   buyProduct(productId:any){
     console.log("buy product ts");
     console.log(productId);
@@ -40,6 +54,8 @@ export class ProductViewComponent implements OnInit {
       isSingleProductCheckout:true,productId:productId
     }]);
   }
+
+
 
 
 }

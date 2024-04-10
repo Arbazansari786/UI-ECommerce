@@ -9,3 +9,29 @@
 .active{
     font-weight: bolder;
 }
+
+#cart-icon {
+    width: 3.1rem; /* Adjust according to your design */
+    height: 2rem; /* Adjust according to your design */
+  }
+.cartContainer{
+    max-width: 150px;
+}
+  
+  #cart-count {
+    padding-bottom: 3px;
+    padding-top: 3px;
+    padding-left: 6px;
+    padding-right: 6px;
+    position: absolute;
+    top: 9px;
+    right: 175px;
+    background-color: red;
+    color: white;
+    border-radius: 67%;
+    /* padding: 5px; */
+    font-size: 17px;
+  }
+
+  
+  

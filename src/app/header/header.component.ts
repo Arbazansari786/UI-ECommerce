@@ -1,17 +1,39 @@
-import { Component } from '@angular/core';
+import { Component, Injectable, OnChanges, OnInit, SimpleChanges } from '@angular/core';
 import { UserAuthService } from '../_service/user-auth.service';
 import { Router } from '@angular/router';
 import { Role } from '../_model/role';
+import { ProductService } from '../_service/product.service';
+import { CartService } from '../_service/cart.service';
 
 @Component({
   selector: 'app-header',
   templateUrl: './header.component.html',
   styleUrl: './header.component.css'
 })
-export class HeaderComponent {
 
-  constructor(private userAuth:UserAuthService,private router:Router){
+@Injectable({
+  providedIn: 'root'
+})
+export class HeaderComponent implements OnInit{
 
+  ngOnInit(): void {
+
+    this.getCount();
+      
+  }
+  
+
+  
+  
+
+  constructor(private userAuth:UserAuthService,private router:Router,private cartService:CartService){
+
+  }
+
+ public cartCount:number=0;
+
+  public getCount(){
+      this.cartCount=this.cartService.getCartCount();
   }
 
   public isLogged():boolean{
@@ -22,7 +44,6 @@ export class HeaderComponent {
 
      this.userAuth.clear();
      this.router.navigate(['/home']);
-
   }
 
   public isRoleMatched(role:string):boolean{

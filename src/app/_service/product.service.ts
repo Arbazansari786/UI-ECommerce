@@ -43,4 +43,20 @@ export class ProductService {
     return this.httpClient.get<Product[]>(this.base_url+"/product/getProductDetails/"+isSingleProductCheckout+"/"+productId)
   }
 
+  public addToCart(productId:any){
+        return this.httpClient.get(this.base_url+"/cart/add/"+productId);
+  }
+
+  public getCartDetails(){
+    return this.httpClient.get(this.base_url+"/cart/details");
+  }
+
+  public getCartCount(){
+    return this.httpClient.get(this.base_url+"/cart/count")
+  }
+
+  public deleteCartById(cartId:number){
+    return this.httpClient.delete(this.base_url+"/cart/delete/"+cartId);
+  }
+
 }

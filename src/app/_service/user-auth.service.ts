@@ -7,6 +7,7 @@ import { Role } from '../_model/role';
 export class UserAuthService {
 
 
+  
   constructor() { }
   public setRoles(roles:Role []){
     if (typeof window !== 'undefined') {

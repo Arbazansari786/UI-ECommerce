@@ -30,7 +30,15 @@
 
         </ul>
       </div>
-      <button  *ngIf="!isLogged()" type="button" class="btn whiteButton fw-bold" style="border-radius: 10px;" routerLink="/login"  routerLinkActive="active"   [routerLinkActiveOptions]="{exact:true}">Login</button>
+      <div class="container cartContainer">
+      <a *ngIf="isRoleMatched('user')" routerLink="/cart" style="text-decoration: none; color: black; ">
+        <img class="cartImg" src="../../assets/Images/Cart.svg" alt="Cart" id="cart-icon">Cart
+        <span id="cart-count">{{cartCount}}</span> <!-- This will be dynamically updated with the number of items in the cart -->
+      </a>
+    </div>
+    <button  *ngIf="!isLogged()" type="button" class="btn whiteButton fw-bold" style="border-radius: 10px;" routerLink="/login"  routerLinkActive="active"   [routerLinkActiveOptions]="{exact:true}">Login</button>
+
+      
       <button *ngIf="isLogged()" (click)="logOut()"  type="button" class="btn blackButton fw-bold" style="border-radius: 10px;"   routerLinkActive="active"  [routerLinkActiveOptions]="{exact:true}">Logout</button>
     </div>
   </nav>

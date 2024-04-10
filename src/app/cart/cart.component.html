@@ -1,0 +1,67 @@
+<section>
+    <div class="container">
+        <h2>My shopping cart</h2>
+        <div class="cart">
+            <div class="col-md-12 col-lg-10 mx-auto">
+
+
+
+                <div class="cart-item" *ngFor="let cart of cartItems">
+                    <div class="row">
+                        <div class="col-md-7 center-item">
+                            <img [src]="cart.product.productImages[0].url" alt="">
+                            <div class="col">
+                                <h3>{{cart.product.productName}}</h3>
+
+                                <p class="desc">{{cart.product.productDescription}}</p>
+
+                            </div>
+
+
+                        </div>
+
+                        <div class="col-md-5 center-item">
+                            <div class="input-group number-spinner">
+                                <button id="minus" class="btn btn-default"><i class="fas fa-minus"></i></button>
+                                <input id="phone-number" type="number" min="0" class="form-control text-center"
+                                    value="1">
+                                <button id="plus" class="btn btn-default"><i class="fas fa-plus"></i></button>
+                                <p class="total-price"><span id="total">{{cart.product.productDiscountedPrice |
+                                        currency:'INR'}} &nbsp; <span
+                                            style="text-decoration: line-through;">{{cart.product.productActualPrice|
+                                            currency:'INR'}} </span> &nbsp; <span
+                                            style="color: red;">{{cart.product.productActualPrice-cart.product.productDiscountedPrice
+                                            | currency:"INR"}} OFF</span> </span></p>
+                            </div>
+                            <a  routerLink="/cart" (click)="deleteCartItemById(cart.cartId)">
+                            <img src="../../assets/Images/delete.jpeg" alt="" class="remove-item">
+                            </a>
+                        </div>
+                    </div>
+                </div>
+
+             
+
+                <div class="cart-item">
+                    <div class="row">
+
+                        <div class="col-md-8">
+                            <h5>Subtotal: </h5>
+                            <h5>Tax:</h5>
+                            <h5>Total:</h5>
+                        </div>
+
+                        <div class="col-md-4 status">
+                            <h5>$<span id="sub-total">1278</span></h5>
+                            <h5>$<span id="tax-total">0</span></h5>
+                            <h5>$<span id="total-amount">1278</span></h5>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-12 pt-4 pb-4">
+                    <button type="button" class="btn btn-success check-out">Check Out</button>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>

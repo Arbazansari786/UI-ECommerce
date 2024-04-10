@@ -14,6 +14,7 @@ import { ProductResolveService } from './product-resolve.service';
 import { BuyProductComponent } from './buy-product/buy-product.component';
 import { resolve } from 'path';
 import { BuyProductResolverService } from './_service/buy-product-resolver.service';
+import { CartComponent } from './cart/cart.component';
 
 const routes: Routes = [
   {
@@ -23,6 +24,10 @@ canActivate: [AuthGuardService], data: { roles: ['User'] },
     resolve: {
       productDetails: BuyProductResolverService
     }
+  },
+  {
+    path:"cart",
+    component:CartComponent
   },
 
   {
