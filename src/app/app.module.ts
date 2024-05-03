@@ -32,6 +32,8 @@ import { MatDialogModule } from '@angular/material/dialog';
 import { AuthGuardService } from './_service/auth-guard.service';
 import { AuthInterceptorService } from './_service/auth-interceptor.service';
 import { BuyProductComponent } from './buy-product/buy-product.component';
+import { MyOrdersComponent } from './my-orders/my-orders.component';
+import { FooterComponent } from './footer/footer.component';
 
 
 
@@ -51,7 +53,9 @@ import { BuyProductComponent } from './buy-product/buy-product.component';
     ShowImageDialogComponent,
     ProductViewComponent,
     ShowAllProductComponent,
-    BuyProductComponent
+    BuyProductComponent,
+    MyOrdersComponent,
+    FooterComponent,
     
   ],
   imports: [

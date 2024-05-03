@@ -3,6 +3,7 @@ import { Injectable } from '@angular/core';
 import { Product } from '../_model/product';
 import { Observable, of } from 'rxjs';
 import { OrderDetails } from '../_model/order-details-model';
+import { MyOrderDetails } from '../_model/my-orders-model';
 @Injectable({
   providedIn: 'root'
 })
@@ -46,6 +47,10 @@ export class ProductService {
 
   public placeOrder(orderDetails:OrderDetails){
     return this.httpClient.post(this.base_url+"/order/placeOrder",orderDetails);
+  }
+
+  public getOrders():Observable<MyOrderDetails[]>{
+    return this.httpClient.get<MyOrderDetails[]>(this.base_url+"/order/getOrders")
   }
 
 }

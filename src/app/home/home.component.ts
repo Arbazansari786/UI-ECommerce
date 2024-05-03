@@ -65,4 +65,13 @@ export class HomeComponent {
   productViewDetails(productId:any) {
     this.router.navigate(['/productView', {productId: productId}]);
   }
+
+  percentage(discountedPrice:number,actualPrice:number){
+    const disAmount:number=actualPrice-discountedPrice;
+    return Math.round((disAmount/actualPrice)*100).toFixed();
+  }
+
+  upperCase(productName:any){
+    return productName.toUpperCase();
+  }
 }

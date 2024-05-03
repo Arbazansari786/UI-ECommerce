@@ -41,5 +41,18 @@ export class ProductViewComponent implements OnInit {
     }]);
   }
 
+  upperCase(productName:string){
+    return productName.toUpperCase();
+  }
+
+  discountPercentage(productDiscountedPrice:number,productActualPrice:number){
+    const discountAmt=productActualPrice-productDiscountedPrice;
+    return Math.round((discountAmt/productActualPrice)*100).toFixed();
+  }
+
+  saving(productDiscountedPrice:number,productActualPrice:number){
+    return productActualPrice-productDiscountedPrice;
+  }
+
 
 }
