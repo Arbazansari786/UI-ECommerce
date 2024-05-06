@@ -54,5 +54,13 @@ export class ProductViewComponent implements OnInit {
     return productActualPrice-productDiscountedPrice;
   }
 
+  changeCurrentproduct(product:Product){
+
+    console.log("change Product");
+    this.product=product;
+
+    
+  }
+
 
 }

@@ -51,7 +51,7 @@
     <!-- <hr> -->
     <div class="mt-5">
         <p class="display-6 fw-bold brownText">You might be interested in</p><hr style="color: #97765d;">
-        <app-home></app-home>
+    <app-interested-product [ignoreProductId]="product.productId" (selectedProduct)="changeCurrentproduct($event)"></app-interested-product>
     </div>
     
 

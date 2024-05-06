@@ -34,6 +34,7 @@ import { AuthInterceptorService } from './_service/auth-interceptor.service';
 import { BuyProductComponent } from './buy-product/buy-product.component';
 import { MyOrdersComponent } from './my-orders/my-orders.component';
 import { FooterComponent } from './footer/footer.component';
+import { InterestedProductComponent } from './product-view/interested-product/interested-product.component';
 
 
 
@@ -56,6 +57,7 @@ import { FooterComponent } from './footer/footer.component';
     BuyProductComponent,
     MyOrdersComponent,
     FooterComponent,
+    InterestedProductComponent,
     
   ],
   imports: [
