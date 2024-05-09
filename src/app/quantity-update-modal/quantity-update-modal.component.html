@@ -1,0 +1,28 @@
+<div class="container">
+    <div class="row p-2">
+        <h2 class="col-9">Update Product</h2>
+        <div class="col-3 d-flex justify-content-end">
+            <button class="btn-close"  (click)="close()"></button>
+        </div>
+        
+        <hr>
+    </div>
+    <div class="row">
+        <form #updateQtyForm="ngForm"  (ngSubmit)="updateProduct(updateQtyForm)">
+            <div class="form-group p-2">
+                <label for="fullName" >Product Name</label>
+                <input type="text" [disabled]="true" class="form-control" [(ngModel)]="product.productName" id="productName" name="productName">
+            </div>
+            <div class="form-group p-2">
+                <label for="fullAddress">Product description</label>
+                <textarea [disabled]="true" class="form-control" [(ngModel)]="product.productDescription" id="productDescription"  name="productDescription" style="height: 140px;"></textarea>
+                <!-- <input type="text" [disabled]="true" class="form-control" [(ngModel)]="product.productDescription" id="productDescription"  name="productDescription"> -->
+            </div>
+            <div class="form-group p-2">
+                <label for="contactNumber">Available stock</label>
+                <input type="number" class="form-control" [(ngModel)]="product.availableStock" id="availableStock" name="availableStock">
+            </div>
+            <button type="submit" class="btn btn-dark p-2">Update</button>
+        </form>
+    </div>
+</div>

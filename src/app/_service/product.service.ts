@@ -20,13 +20,18 @@ export class ProductService {
   public addProduct(product:FormData){
    console.log("************   "+product);
    return this.httpClient.post<Product>(this.base_url+"/product/add",product);
-
   }
 
   public getAllProduct():Observable<Product[]>{
    console.log("Get All Products");
    return this.httpClient.get<Product[]>(this.base_url+"/product/allProducts");
+  }
 
+  public getNotAvailableStock():Observable<Product[]>{
+    return this.httpClient.get<Product[]>(this.base_url+"/product/notAvailableStock");
+  }
+  public updateAvailableStock(product:Product){
+    return this.httpClient.put<Product>(this.base_url+"/product/updateAvailableStock",product);
   }
 
   public deleteProduct(productId:Number){

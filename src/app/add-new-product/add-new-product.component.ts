@@ -22,6 +22,7 @@ export class AddNewProductComponent  {
     productDescription:"",
     productActualPrice:0,
     productDiscountedPrice:0,
+    availableStock:0,
     productImages:[]
 
   }

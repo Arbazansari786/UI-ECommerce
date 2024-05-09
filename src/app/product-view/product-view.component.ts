@@ -10,10 +10,13 @@ import { ProductService } from '../_service/product.service';
 })
 export class ProductViewComponent implements OnInit {
 
+  disableBuyNow:boolean=false;
+
   product:Product={
     productName:"",
     productDescription:"",
     productActualPrice:0,
+    availableStock:0,
     productDiscountedPrice:0,
     productImages:[]
   };
@@ -52,6 +55,16 @@ export class ProductViewComponent implements OnInit {
 
   saving(productDiscountedPrice:number,productActualPrice:number){
     return productActualPrice-productDiscountedPrice;
+  }
+
+  getDetails(availableStock:number){
+    if(availableStock!=0){
+      this.disableBuyNow=false;
+      return "Only "+availableStock+" items left";
+    }else{
+      this.disableBuyNow=true;
+      return "Out of stock";
+    }
   }
 
 

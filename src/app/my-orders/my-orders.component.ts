@@ -41,6 +41,7 @@ export class MyOrdersComponent implements OnInit{
       }
     );
     
+    
   }
 
   upperCase(productName:string){

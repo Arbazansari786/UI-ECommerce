@@ -36,23 +36,26 @@
                 </div>
                 <div class="mt-3">
                     <b class="h3"> ₹ {{product.productDiscountedPrice}}/- &nbsp; </b><br><br><span class="h6"
-                            style="text-decoration: line-through;">₹{{product.productActualPrice}}</span>&nbsp;&nbsp;&nbsp;<span class="text-success fw-bold descFontSize">{{discountPercentage(product.productDiscountedPrice,product.productActualPrice)}}% off</span>
+                            style="text-decoration: line-through;">₹{{product.productActualPrice}}</span>&nbsp;&nbsp;&nbsp;<span class="text-success fw-bold descFontSize">{{discountPercentage(product.productDiscountedPrice,product.productActualPrice)}}% off</span>&nbsp;<span class="text-danger" style="margin-left: 40px;">{{getDetails(product.availableStock)}}</span>
                             
-                            <p class="descFontSize">Overall you save ₹{{saving(product.productDiscountedPrice,product.productActualPrice)}} ({{discountPercentage(product.productDiscountedPrice,product.productActualPrice)}}%) on this product</p>
+                            <p class="descFontSize mt-2">Overall you save ₹{{saving(product.productDiscountedPrice,product.productActualPrice)}} ({{discountPercentage(product.productDiscountedPrice,product.productActualPrice)}}%) on this product</p>
                 </div>
     
                 <div class="mt-3">
-                    <button  class="btn blackButton" style="border-radius: 3px;" type="button"
+                    <button [disabled]="disableBuyNow"  class="btn blackButton" style="border-radius: 3px;" type="button"
                         (click)="buyProduct(product.productId)">Buy Now</button>
                 </div>    
             </div>
         </div>
     </div>
     <!-- <hr> -->
-    <div class="mt-5">
-        <p class="display-6 fw-bold brownText">You might be interested in</p><hr style="color: #97765d;">
-        <app-home></app-home>
+    <div class="shadow p-3 mt-5">
+        <div class="mt-2">
+            <p class="display-6 p-2 fw-bold brownText">You might be interested in</p><hr style="color: #97765d;">
+            <app-home></app-home>
+        </div>
     </div>
+    
     
 
 </div>

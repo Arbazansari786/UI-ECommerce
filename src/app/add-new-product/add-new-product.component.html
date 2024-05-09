@@ -29,6 +29,11 @@
             <input class="darkText"  matInput [(ngModel)]="product.productDiscountedPrice" name="productDiscountedPrice"
               placeholder="Enter Product Discounted Price " id="productDiscountedPrice">
           </mat-form-field>
+          <mat-form-field appearance="outline" class="w-100 ">
+            <mat-label class="darkText" >Quantity</mat-label>
+            <input type="number" class="darkText"  matInput [(ngModel)]="product.availableStock" name="availableStock"
+              placeholder="Enter available Product quantity " id="availableStock">
+          </mat-form-field>
 
           <div align="end" *ngIf="!isUpdated" >
             <button mat-stroked-button color="primary" style="margin-right: 13px;">Clear</button>

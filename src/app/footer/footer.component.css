@@ -1,3 +1,23 @@
 .lightBrownBg{
         background-color: #fcf8ee;
 }
+.darkBrownBg{
+        background-color: #97765d96;
+        color: #ffff;
+}
+.fontHeading{
+        font-size: 20px;
+        color: #97765d;
+}
+.companyNameContentSize{
+        font-size: 17px;
+}
+.smallheading{
+        font-size: 15px;
+        color: #97765d;
+}
+
+.footerContent{
+        text-decoration: none;
+        color:#97765d;
+}

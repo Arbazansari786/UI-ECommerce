@@ -18,10 +18,12 @@ export class UserAuthService {
     
     let roles:string|null=null;
     if (typeof window !== 'undefined') {
+
        roles=localStorage.getItem("roles");
 
     }
-    if(roles==null)
+    
+    if(roles==null || roles==undefined)
         return [];
     return JSON.parse(roles);
   }
@@ -60,16 +62,21 @@ export class UserAuthService {
   public isUser():boolean{
    
     const roles=this.getRoles();
-    if(roles==null)
+    if(roles==null || roles.length===0)
       return false;
+    console.log("is user");
+    console.log(roles);
+    
+    
     return roles[0].roleName==="User";
+
   }
   public isAdmin():boolean{
    
     const roles=this.getRoles();
-    if(roles==null)
-      return false;
-    return roles[0].roleName==="Admin";
+    if(roles==null || roles.length===0)
+      return false; 
+    return roles[0].roleName==="admin";
   }
 
   public clear(){
