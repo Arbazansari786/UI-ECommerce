@@ -34,15 +34,15 @@
                     </div>
                     <div class="form-group">
                         <label for="fullAddress">Full address</label>
-                        <input type="password" class="form-control" id="fullAddress" [(ngModel)]="orderDetails.fullAddress" placeholder="Enter full address" name="fullAddress">
+                        <input type="text" class="form-control" id="fullAddress" [(ngModel)]="orderDetails.fullAddress" placeholder="Enter full address" name="fullAddress">
                     </div>
                     <div class="form-group">
                         <label for="contactNumber">Contact number</label>
-                        <input type="password" class="form-control" id="contactNumber"[(ngModel)]="orderDetails.contactNumber" placeholder="Enter contact number" name="contactNumber">
+                        <input type="text" class="form-control" id="contactNumber"[(ngModel)]="orderDetails.contactNumber" placeholder="Enter contact number" name="contactNumber">
                     </div>
                     <div class="form-group">
                         <label for="alternateContactNumber">Alternate contact number</label>
-                        <input type="password" class="form-control" id="alternateContactNumber" [(ngModel)]="orderDetails.alternateContactNumber" placeholder="Enter altername contact number" name="alternateContactNumber">
+                        <input type="text" class="form-control" id="alternateContactNumber" [(ngModel)]="orderDetails.alternateContactNumber" placeholder="Enter altername contact number" name="alternateContactNumber">
                     </div>
                     <button type="submit" [disabled]="disablePlaceOrderButton" class="btn btn-dark">Place order</button>
                 </form>

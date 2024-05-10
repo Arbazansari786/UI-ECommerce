@@ -36,6 +36,7 @@ import { MyOrdersComponent } from './my-orders/my-orders.component';
 import { FooterComponent } from './footer/footer.component';
 import { NotificationModalComponent } from './notification-modal/notification-modal.component';
 import { QuantityUpdateModalComponent } from './quantity-update-modal/quantity-update-modal.component';
+import { OrderInformationComponent } from './order-information/order-information.component';
 
 
 
@@ -60,6 +61,7 @@ import { QuantityUpdateModalComponent } from './quantity-update-modal/quantity-u
     FooterComponent,
     NotificationModalComponent,
     QuantityUpdateModalComponent,
+    OrderInformationComponent,
     
   ],
   imports: [

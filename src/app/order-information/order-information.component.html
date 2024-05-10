@@ -1,0 +1,33 @@
+<div class="container mt-5">
+    <div class="shadow p-3">
+        <table class="table table-hover">
+            
+            <caption *ngIf="displayNoRecords">No record available</caption>
+            <thead>
+              <tr>
+                <th class="brownText" scope="col">Order Id</th>
+                <th class="brownText" scope="col">Product Name</th>
+                <th class="brownText" scope="col">Name</th>
+                <th class="brownText" scope="col">Address</th>
+                <th class="brownText" scope="col">Contact No.</th>
+                <th class="brownText" scope="col">Status</th>
+                <th class="brownText" scope="col">Action</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr *ngFor="let order of orderDetails">
+                <td>{{order.orderId}}</td>
+                <td>{{order.product.productName}}</td>
+                <td>{{order.orderFullName}}</td>
+                <td>{{order.orderFullAddress}}</td>
+                <td>{{order.orderContactNumber}}</td>
+                <td>{{getStatus(order.orderStatus)}}</td>
+                <td>
+                    <button class="btn btn-sm blackButton text-light" *ngIf="placed"  (click)="markAsDelivered(order.orderId)" style="border-radius: 30px;">Mark as Delivered</button>
+                    <button class="btn btn-sm brownButton text-light" *ngIf="!placed"  style="border-radius: 30px;">Item Delivered</button>
+                </td>
+              </tr>
+            </tbody>
+          </table>
+    </div>
+</div>
