@@ -43,7 +43,7 @@ export class HomeComponent {
     .subscribe(
       (resp: Product[]) => {
         console.log("Home Component")
-        console.log(resp);
+        // console.log(resp);
         // if(resp.length == 12) {
         //   this.showLoadButton = true;
         // } else {

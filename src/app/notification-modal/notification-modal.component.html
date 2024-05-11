@@ -1,0 +1,24 @@
+<div>
+    <div class="container-fluid">
+        <div class="row p-2">
+            <div class="col-9">
+                <h3 class="d-flex justify-content-start">Notification</h3>
+            </div>
+            <div class="col-2">
+                <button class="btn-close" (click)="close()"></button>
+            </div>
+            <hr>
+        </div>
+        <div *ngIf="isStockAvailable">
+            <h3>No updates</h3>
+        </div>
+        <div class="row" *ngFor="let product of dataSource">
+            <p class="col-8">{{product.productName}} is out of stock</p>
+            <a (click)="openQuantityUpdateModal(product)" (click)="close()" class="col-4" style="text-decoration: none;">update</a>
+        </div>
+        
+    </div>
+    
+    
+                    
+</div>

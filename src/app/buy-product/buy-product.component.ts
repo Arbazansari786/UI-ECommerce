@@ -16,6 +16,7 @@ import { MatDialog } from '@angular/material/dialog';
 export class BuyProductComponent implements OnInit{
 
   productDetails:Product[]=[];
+  disablePlaceOrderButton:boolean=false;
 
 
   orderDetails:OrderDetails={
@@ -73,9 +74,21 @@ export class BuyProductComponent implements OnInit{
   }
 
   onQuantityChanged(quantity:any,productId:any){
-    this.orderDetails.orderProductQuantityList.filter(
+    
+    const filteredProduct=this.orderDetails.orderProductQuantityList.filter(
       (orderProduct)=>orderProduct.productId===productId
-    )[0].quantity=quantity;
+    );
+    const qty=filteredProduct[0].quantity=quantity;
+    const filteredStockData=this.productDetails.filter((product)=>product.productId===productId);
+    if(filteredStockData[0].availableStock<quantity){
+      this.disablePlaceOrderButton=true;
+      console.log(filteredStockData[0].availableStock);
+      alert("Only "+filteredStockData[0].availableStock+" quantity available and you selected "+quantity);
+    }else{
+      this.disablePlaceOrderButton=false;
+    }
+    
+    return qty;
   }
 
   getCalculatedGrandTotal(){

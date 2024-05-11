@@ -15,6 +15,7 @@ import { BuyProductComponent } from './buy-product/buy-product.component';
 import { resolve } from 'path';
 import { BuyProductResolverService } from './_service/buy-product-resolver.service';
 import { MyOrdersComponent } from './my-orders/my-orders.component';
+import { OrderInformationComponent } from './order-information/order-information.component';
 
 const routes: Routes = [
   {
@@ -57,6 +58,12 @@ canActivate: [AuthGuardService], data: { roles: ['User'] },
   { path: 'ShowAllProducts', component: ShowAllProductComponent },
   {
     path: 'productView', component: ProductViewComponent, resolve: { product: ProductResolveService },
+  },
+  {
+    path: "orderInformation",
+    component: OrderInformationComponent,
+    canActivate: [AuthGuardService],
+    data: { roles: ["admin"] }
   },
 
 

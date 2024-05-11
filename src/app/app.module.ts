@@ -34,6 +34,9 @@ import { AuthInterceptorService } from './_service/auth-interceptor.service';
 import { BuyProductComponent } from './buy-product/buy-product.component';
 import { MyOrdersComponent } from './my-orders/my-orders.component';
 import { FooterComponent } from './footer/footer.component';
+import { NotificationModalComponent } from './notification-modal/notification-modal.component';
+import { QuantityUpdateModalComponent } from './quantity-update-modal/quantity-update-modal.component';
+import { OrderInformationComponent } from './order-information/order-information.component';
 import { InterestedProductComponent } from './product-view/interested-product/interested-product.component';
 
 
@@ -57,6 +60,9 @@ import { InterestedProductComponent } from './product-view/interested-product/in
     BuyProductComponent,
     MyOrdersComponent,
     FooterComponent,
+    NotificationModalComponent,
+    QuantityUpdateModalComponent,
+    OrderInformationComponent,
     InterestedProductComponent,
     
   ],
