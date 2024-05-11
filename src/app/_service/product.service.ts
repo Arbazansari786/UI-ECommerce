@@ -50,12 +50,24 @@ export class ProductService {
     return this.httpClient.get<Product[]>(this.base_url+"/product/getProductDetails/"+isSingleProductCheckout+"/"+productId)
   }
 
-  public placeOrder(orderDetails:OrderDetails){
-    return this.httpClient.post(this.base_url+"/order/placeOrder",orderDetails);
+  public placeOrder(orderDetails:OrderDetails,isCartCheckout:any){
+    return this.httpClient.post(this.base_url+"/order/placeOrder/"+isCartCheckout,orderDetails);
   }
 
   public getOrders():Observable<MyOrderDetails[]>{
     return this.httpClient.get<MyOrderDetails[]>(this.base_url+"/order/getOrders")
+  }
+
+  // Cart operation
+  public addToCart(productId:number) {
+    return this.httpClient.get(this.base_url+"/cart/"+productId);
+  }
+
+  public deleteCartItem(cartId:number) {
+    return this.httpClient.delete(this.base_url+"/cart/"+cartId);
+  }
+  public getCartDetails() {
+    return this.httpClient.get(this.base_url+"/cart/getCartDetails");
   }
 
 }

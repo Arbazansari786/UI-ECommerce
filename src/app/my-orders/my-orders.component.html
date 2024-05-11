@@ -1,18 +1,13 @@
 <div class="container">
-    <div class="row mt-3">
-        <div class="col-11">
-            <input class="form-control" type="search" placeholder="Search" aria-label="Search">
-        </div>
-        <div class="col-1">
-            <button class="btn btn-outline-success" type="submit">Search</button>
-        </div>
-    </div>
-    
+   
+    <app-search (onSearchText)="searchOrder($event)"></app-search>
+
     <div *ngIf="notBlank">
-        <div class="card shadow p-3 m-3 bg-body rounded"  *ngFor="let order of myOrders" >
+        <ng-container *ngFor="let order of myOrders">
+        <div class="card shadow p-3 m-3 bg-body rounded"  *ngIf="isMatch(order)">
             <div class="row">
                 <div class="col-2">
-                    {{order.product.productImages[0]}}
+                    <img class="home-page-product-image" style="width: 90%;" [src]="order.product.productImages[0].url" alt="">
                 </div>
                 <div class="col-4">
                     <h4 class="brownText">{{upperCase(order.product.productName)}}</h4>
@@ -21,15 +16,19 @@
                 <div class="col-2">
                     ₹{{order.orderAmount}}
                 </div>
-                <div class="col-2" >
-                            <div  style="float:left;margin-right:10px; width: 10px; height: 10px;border-radius: 5px; background-color: rgb(64, 168, 32);"></div>
-                            <em style="float:left;">{{order.orderStatus}}</em>
+                <div class="col-2">
+                    <div
+                        style="float:left;margin-right:10px; width: 10px; height: 10px;border-radius: 5px; background-color: rgb(64, 168, 32);">
+                    </div>
+                    <em style="float:left;">{{order.orderStatus}}</em>
                 </div>
+               
             </div>
         </div>
+    </ng-container>
     </div>
     <div *ngIf="!notBlank" class="mt-5">
         <h2 class="text-center">Records not available</h2>
     </div>
-    
+
 </div>

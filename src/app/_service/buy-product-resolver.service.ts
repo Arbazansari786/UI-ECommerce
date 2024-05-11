@@ -16,10 +16,12 @@ export class BuyProductResolverService implements Resolve<Product[]>{
     ) { }
 
   resolve(route: ActivatedRouteSnapshot, state: RouterStateSnapshot): Product[] | Observable<Product[]> | Promise<Product[]> {
-    const id=route.paramMap.get("productId");
+    const id=route.paramMap.get("id");
     console.log("id is"+id);
     
     const isSingleProductCheckout=route.paramMap.get("isSingleProductCheckout")
+    console.log(isSingleProductCheckout);
+    
     return this.productService.getProductDetails(isSingleProductCheckout,id)
     .pipe(
       map(

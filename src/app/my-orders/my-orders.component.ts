@@ -3,6 +3,9 @@ import { ProductService } from '../_service/product.service';
 import { error, log } from 'console';
 import { MyOrderDetails } from '../_model/my-orders-model';
 import { IfStmt } from '@angular/compiler';
+import { map } from 'rxjs';
+import { ImageProcessingService } from '../_service/image-processing.service';
+import { OrderDetails } from '../_model/order-details-model';
 
 @Component({
   selector: 'app-my-orders',
@@ -14,14 +17,42 @@ export class MyOrdersComponent implements OnInit{
 
   myOrders:MyOrderDetails[]=[];
 
-  constructor(private productService:ProductService){}
+  searchOrderText:string="";
+
+  constructor(private productService:ProductService,private imageProcessingService:ImageProcessingService){}
 
   ngOnInit(): void {
     this.getOrderDetails();
   }
 
+  convertProductImages(order:MyOrderDetails){
+    order.product= this.imageProcessingService.createImages(order.product);
+      return order;
+  }
+
+  searchOrder(searchText:string){
+      this.searchOrderText=searchText.toLowerCase();
+
+  }
+
+  isMatch(order:MyOrderDetails):boolean{
+    if(this.searchOrderText!=""){
+        if(order.product.productName.toLowerCase().includes(this.searchOrderText) || 
+            order.product.productDescription.toLowerCase().includes(this.searchOrderText))
+            return true;
+        return false;
+    }
+    return true;
+
+  }
+  
+
   getOrderDetails(){
-    this.productService.getOrders().subscribe(
+    this.productService.getOrders().pipe(
+      map(
+        (orders:MyOrderDetails[])=>orders.map(
+          (order:MyOrderDetails)=>this.convertProductImages(order))) 
+    ).subscribe(
       (result:MyOrderDetails[])=>{
         this.myOrders=result;
         console.log(result);

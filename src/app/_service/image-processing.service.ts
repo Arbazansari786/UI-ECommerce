@@ -36,7 +36,6 @@ export class ImageProcessingService {
 
    product.productImages=productImagetoFileHandle;
    return product;
-
   }
 
   public dataURItoBlob(picByte:any,imageType:any){

@@ -1,4 +1,4 @@
-import { Component } from '@angular/core';
+import { Component, EventEmitter } from '@angular/core';
 import { ProductService } from '../_service/product.service';
 import { ImageProcessingService } from '../_service/image-processing.service';
 import { Router } from '@angular/router';
@@ -19,6 +19,7 @@ export class HomeComponent {
   productDetails :Product[]= [];
 
   showLoadButton = false;
+  searchText:string="";
 
   constructor(private productService: ProductService,
     private imageProcessingService: ImageProcessingService,
@@ -61,6 +62,24 @@ export class HomeComponent {
   //   this.pageNumber = this.pageNumber + 1;
   //   this.getAllProducts();
   // }
+
+  isMatch(product:Product){
+
+    if(this.searchText!=""){
+
+        if(product.productName.toLowerCase().includes(this.searchText) || product.productDescription.toLowerCase().includes(this.searchText))
+          return true;
+        return false;
+
+    }
+
+    return true;
+
+  }
+
+  showFilterProduct(searchText:string){
+      this.searchText=searchText.toLowerCase();
+  }
 
   productViewDetails(productId:any) {
     this.router.navigate(['/productView', {productId: productId}]);

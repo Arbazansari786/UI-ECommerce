@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, Injector, NgZone, OnInit } from '@angular/core';
 import { NgForm } from '@angular/forms';
 import { OrderDetails } from '../_model/order-details-model';
 import { ActivatedRoute, Router } from '@angular/router';
@@ -15,6 +15,8 @@ import { MatDialog } from '@angular/material/dialog';
 })
 export class BuyProductComponent implements OnInit{
 
+  isSingleProductCheckout :any;
+
   productDetails:Product[]=[];
   disablePlaceOrderButton:boolean=false;
 
@@ -29,12 +31,16 @@ export class BuyProductComponent implements OnInit{
 
 
   constructor(private dialog: MatDialog,private activatedRoute:ActivatedRoute,
-    private productService:ProductService,private route:Router
+    private productService:ProductService,private route:Router,private injector: Injector
     ){
 
   }
   ngOnInit(): void {
+    console.log("Product initialiazed started");
+    
     this.productDetails=this.activatedRoute.snapshot.data['productDetails'];
+    this.isSingleProductCheckout = this.activatedRoute.snapshot.paramMap.get("isSingleProductCheckout");
+    
 
     this.productDetails.forEach(
       x=>this.orderDetails.orderProductQuantityList.push(
@@ -43,15 +49,24 @@ export class BuyProductComponent implements OnInit{
     );
     console.log(this.productDetails);
     console.log(this.orderDetails);
+    console.log("Product initialiazed finisher");
+
     
     
   }
 
   placeOrder(orderForm:NgForm){
-    this.productService.placeOrder(this.orderDetails).subscribe(
+    this.productService.placeOrder(this.orderDetails,this.isSingleProductCheckout).subscribe(
       (resp)=>{
         console.log(resp);
         orderForm.reset();
+        const ngZone = this.injector.get(NgZone);
+        ngZone.run(
+          () => {
+            this.route.navigate(["/orderConfirm"]);
+          }
+        );
+
       },
       (err)=>{
         console.log(err);

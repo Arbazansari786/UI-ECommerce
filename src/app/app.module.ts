@@ -38,6 +38,8 @@ import { NotificationModalComponent } from './notification-modal/notification-mo
 import { QuantityUpdateModalComponent } from './quantity-update-modal/quantity-update-modal.component';
 import { OrderInformationComponent } from './order-information/order-information.component';
 import { InterestedProductComponent } from './product-view/interested-product/interested-product.component';
+import { CartComponent } from './cart/cart.component';
+import { SearchComponent } from './search/search.component';
 
 
 
@@ -64,6 +66,8 @@ import { InterestedProductComponent } from './product-view/interested-product/in
     QuantityUpdateModalComponent,
     OrderInformationComponent,
     InterestedProductComponent,
+    CartComponent,
+    SearchComponent,
     
   ],
   imports: [

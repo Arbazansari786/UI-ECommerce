@@ -29,6 +29,7 @@ export class ProductViewComponent implements OnInit {
     this.product = this.activatedRoute.snapshot.data['product'];
     console.log(this.product)
   }
+  
 
   changeIndex(i:number){
     this.selectIndex=i;
@@ -40,7 +41,7 @@ export class ProductViewComponent implements OnInit {
     
     
     this.router.navigate(['/buyProduct',{
-      isSingleProductCheckout:true,productId:productId
+      isSingleProductCheckout:true,id:productId
     }]);
   }
 
@@ -71,8 +72,16 @@ export class ProductViewComponent implements OnInit {
 
     console.log("change Product");
     this.product=product;
+  }
 
-    
+  addToCart(productId:any) {
+    this.productService.addToCart(productId).subscribe(
+      (response) => {
+        console.log(response);
+      }, (error)=> {
+        console.log(error);
+      }
+    );
   }
 
 
