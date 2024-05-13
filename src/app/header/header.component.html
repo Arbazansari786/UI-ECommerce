@@ -34,9 +34,6 @@
           <li class="nav-item">
             <a *ngIf="isRoleMatched('admin')"  class="nav-link " aria-current="page" routerLink="/orderInformation"  routerLinkActive="active"  [routerLinkActiveOptions]="{exact:true}" >Order information</a>
           </li> 
-
-        
-
         </ul>
       </div>
 
@@ -44,6 +41,7 @@
       <ng-template #logout>
       <button (click)="logOut()"  type="button" class="btn blackButton fw-bold" style="border-radius: 10px;"   routerLinkActive="active"  [routerLinkActiveOptions]="{exact:true}">Logout</button>
       </ng-template>
+      <button *ngIf="isLogged()&& isAdmin()" (click)="notification()" type="button" class="btn fw-bold " style="border-radius: 10px;" routerLinkActive="active" [routerLinkActiveOptions]="{exact:true}"><img src="../assets/Images/bell.svg" height="30px" alt=""> <div *ngIf="displayRedDot" style="width: 15px;height: 15px;border-radius: 50%;background-color: red;font-size:10px;color: white;" >{{notificationCount}}</div></button>
     </div>
   </nav>
 </div>

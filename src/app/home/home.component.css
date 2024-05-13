@@ -37,3 +37,11 @@ mat-grid-tile{
     flex-direction: column;
     height: 100%;
 }
+
+.highlight-product{
+    -webkit-box-shadow: 0 0 1px 3px #000 insert;
+    -moz-box-shadow: 0 0 1px 3px #000 insert;
+    border: #efefef 2px solid;
+    box-shadow: 10px 10px 18px #cccccc;
+    transform: scale(1.05);
+}

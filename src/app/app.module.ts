@@ -37,11 +37,11 @@ import { FooterComponent } from './footer/footer.component';
 import { NotificationModalComponent } from './notification-modal/notification-modal.component';
 import { QuantityUpdateModalComponent } from './quantity-update-modal/quantity-update-modal.component';
 import { OrderInformationComponent } from './order-information/order-information.component';
-import { InterestedProductComponent } from './product-view/interested-product/interested-product.component';
 import { CartComponent } from './cart/cart.component';
+import { InterestedProductComponent } from './product-view/interested-product/interested-product.component';
 import { SearchComponent } from './search/search.component';
-
-
+import { HighlightDirective } from './CustomDirective/highlight.directive';
+import { AppHoverDirective } from './CustomDirective/app-hover.directive';
 
 
 @NgModule({
@@ -68,6 +68,10 @@ import { SearchComponent } from './search/search.component';
     InterestedProductComponent,
     CartComponent,
     SearchComponent,
+    HighlightDirective,
+    AppHoverDirective
+    
+    
     
   ],
   imports: [

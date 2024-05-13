@@ -37,7 +37,7 @@
 <div class="container mt-5">
     <div class="row">
         <ng-container *ngFor="let p of productDetails">
-        <div class="col-3 py-2"  *ngIf="!(p.productId===ignoreProductId)">
+        <div appHighlight class="col-3 py-2"  *ngIf="!(p.productId===ignoreProductId)">
             <div class="card custom-card shadow">
                 <div class="p-3">
                     <div class="image-container">
