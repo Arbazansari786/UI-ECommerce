@@ -14,7 +14,7 @@
         </div>
         <div class="row" *ngFor="let product of dataSource">
             <p class="col-8">{{product.productName}} is out of stock</p>
-            <a (click)="openQuantityUpdateModal(product)" (click)="close()" class="col-4" style="text-decoration: none;">update</a>
+            <a (click)="openQuantityUpdateModal(product)" (click)="close()" class="col-4 notification" style="text-decoration: none;">update</a>
         </div>
         
     </div>

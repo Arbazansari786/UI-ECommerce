@@ -4,7 +4,7 @@
             
             <caption *ngIf="displayNoRecords">No record available</caption>
             <thead>
-              <tr>
+              <tr style="line-height: 55px;" class="tableHeading">
                 <th class="brownText" scope="col">Order Id</th>
                 <th class="brownText" scope="col">Product Name</th>
                 <th class="brownText" scope="col">Name</th>
@@ -15,7 +15,7 @@
               </tr>
             </thead>
             <tbody>
-              <tr *ngFor="let order of orderDetails">
+              <tr class="tableContent" *ngFor="let order of orderDetails" style="line-height: 55px;">
                 <td>{{order.orderId}}</td>
                 <td>{{order.product.productName}}</td>
                 <td>{{order.orderFullName}}</td>
@@ -24,7 +24,8 @@
                 <td>{{getStatus(order.orderStatus)}}</td>
                 <td>
                     <button class="btn btn-sm blackButton text-light" *ngIf="placed"  (click)="markAsDelivered(order.orderId)" style="border-radius: 30px;">Mark as Delivered</button>
-                    <button class="btn btn-sm brownButton text-light" *ngIf="!placed"  style="border-radius: 30px;">Item Delivered</button>
+                    <img src="../assets/Images/del3.png" *ngIf="!placed" height="60px" alt="">
+                    <!-- <button class="btn btn-sm brownButton text-light" *ngIf="!placed"  style="border-radius: 30px;">Item Delivered</button> -->
                 </td>
               </tr>
             </tbody>

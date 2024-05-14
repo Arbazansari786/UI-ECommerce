@@ -37,8 +37,8 @@
 <div class="container mt-5">
     <div class="row">
         <ng-container *ngFor="let p of productDetails">
-        <div appHighlight class="col-3 py-2"  *ngIf="!(p.productId===ignoreProductId)">
-            <div class="card custom-card shadow">
+        <div  class="col-3 py-2"  *ngIf="!(p.productId===ignoreProductId)">
+            <div appHighlight class="card custom-card shadow">
                 <div class="p-3">
                     <div class="image-container">
                         <img class="home-page-product-image" style="width: 90%;" [src]="p.productImages[0].url" alt="">

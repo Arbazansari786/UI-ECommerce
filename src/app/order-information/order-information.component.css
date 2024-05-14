@@ -10,3 +10,11 @@
 .brownText{
     color: #97765d;
 }
+.tableHeading{
+    font-size: 20px;
+    color: #97765d;
+}
+.tableContent{
+    font-size: 17px;
+    color: #97765d;
+}
