@@ -49,6 +49,7 @@ export class OrderInformationComponent implements OnInit{
     }
     );
     this.getAllOrderDetails();
+    this.ngOnInit();
   }
   getStatus(orderStatus:string){
     if(orderStatus==="Delivered"){
