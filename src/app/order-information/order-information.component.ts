@@ -14,6 +14,7 @@ export class OrderInformationComponent implements OnInit{
   orderDetails:MyOrderDetails[]=[];
   displayNoRecords:boolean=true;
   placed:boolean=true;
+  status:string='all';
   
   constructor( private orderService:OrderService){}
   ngOnInit(): void {
@@ -25,7 +26,7 @@ export class OrderInformationComponent implements OnInit{
 
 
   getAllOrderDetails(){
-    this.orderService.getAllOrderDetails().subscribe(
+    this.orderService.getAllOrderDetails(this.status).subscribe(
       (result)=>{
         this.orderDetails=result;
         if(this.orderDetails.length>0){
@@ -67,6 +68,21 @@ export class OrderInformationComponent implements OnInit{
     }else {
       return "bg-danger";
     }
+  }
+  changeStatusToAll(status:string){
+    this.status=status;    
+    this.getAllOrderDetails();
+    this.ngOnInit();
+  }
+  changeStatusToDelivered(status:string){
+    this.status=status;
+    this.getAllOrderDetails();
+    this.ngOnInit();
+  }
+  changeStatusToPlaced(status:string){
+    this.status=status;
+    this.getAllOrderDetails();
+    this.ngOnInit();
   }
 
 }

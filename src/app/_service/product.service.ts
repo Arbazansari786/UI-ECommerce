@@ -69,5 +69,8 @@ export class ProductService {
   public getCartDetails() {
     return this.httpClient.get(this.base_url+"/cart/getCartDetails");
   }
+  public getCheckoutDetails() {
+    return this.httpClient.get(this.base_url+"/cart/checkoutAmount");
+  }
 
 }

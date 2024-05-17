@@ -11,13 +11,17 @@ export class CartComponent {
   displayedColumns: string[] = ['Name', 'Description', 'Price', 'Discounted Price', 'Action'];
 
   cartDetails= [];
+  checkoutDetails:any;
+  allowCheckout:boolean=false;
 
   constructor(private productService: ProductService,
     private router: Router) { }
 
-  ngOnInit(): void {
-    this.getCartDetails();
-  }
+    ngOnInit(): void {
+      this.getCheckoutDetails();
+      this.getCartDetails();
+      
+    }
 
   delete(cartId:number) {
     console.log(cartId);
@@ -29,6 +33,9 @@ export class CartComponent {
         console.log(err);
       }
     );
+    this.ngOnInit();
+    this.getCheckoutDetails();
+    
   }
 
   getCartDetails() {
@@ -58,5 +65,22 @@ export class CartComponent {
     //   }
     // );
   }
+
+  	
+getCheckoutDetails(){
+  this.productService.getCheckoutDetails().subscribe(
+    (result)=>{
+      this.checkoutDetails=result;
+      if(this.checkoutDetails.numberOfItems<=0){
+        this.allowCheckout=false;
+      }else{
+        this.allowCheckout=true
+      }
+    },(err)=>{
+      console.log(err);
+      
+    }
+  )
+}
 
 }

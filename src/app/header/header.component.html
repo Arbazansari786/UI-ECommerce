@@ -15,8 +15,15 @@
             <a *ngIf="isRoleMatched('user')"   class="nav-link " aria-current="page" routerLink="/user"  routerLinkActive="active"  [routerLinkActiveOptions]="{exact:true}">UserDashBoard</a>
           </li>
           
+          
           <li class="nav-item">
             <a *ngIf="isRoleMatched('user')"   class="nav-link " aria-current="page" routerLink="/myOrders"  routerLinkActive="active"  [routerLinkActiveOptions]="{exact:true}">My Orders</a>
+          </li>
+
+          <li class="nav-item">
+            <a *ngIf="isRoleMatched('user')"   class="nav-link " aria-current="page" routerLink="/cart"  routerLinkActive="active"  [routerLinkActiveOptions]="{exact:true}">Cart </a>
+            <!-- <img src="../assets/Images/cart2.png" height="35px" alt=""> -->
+
           </li>
 
           <li class="nav-item">

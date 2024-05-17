@@ -14,8 +14,8 @@ export class OrderService {
   base_url="http://localhost:9999";
 
 
-  public getAllOrderDetails():Observable<MyOrderDetails[]>{
-    return this.httpClient.get<MyOrderDetails[]>(this.base_url+"/order/allOrdersDetails");
+  public getAllOrderDetails(status:string):Observable<MyOrderDetails[]>{
+    return this.httpClient.get<MyOrderDetails[]>(this.base_url+"/order/allOrdersDetails/"+status);
   }
 
   public markAsDelivered(orderId:number){

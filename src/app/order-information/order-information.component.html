@@ -1,5 +1,29 @@
 <div class="container mt-5">
-    <div class="shadow p-3">
+  <div class="row d-flex justify-content-center">
+    <div class="col-3">
+      <div class="shadow p-2">
+        <h2>Filters</h2><hr>
+        <div>
+          <h3 class="fw-bold ps-1">Order status</h3>
+          
+            <input id="all" type="radio" name="status" value="all" [(ngModel)]="status" (change)="changeStatusToAll(status)">
+            <label class="ms-3" for="all">All</label>
+            <br>                    
+            <input id="delivered" type="radio" name="status" value="Delivered" [(ngModel)]="status" (change)="changeStatusToDelivered(status)">
+            <label class="ms-3" for="delivered">Delivered</label>  
+            <br>          
+            <input id="placed" type="radio" name="status" value="Placed" [(ngModel)]="status" (change)="changeStatusToPlaced(status)">
+            <label class="ms-3" for="placed">Placed</label>
+        </div>
+        <div class="mt-2 ps-1">
+          <h3 class="fw-bold">Pending actions</h3>
+          <input id="pending" type="radio" name="status" value="Placed" [(ngModel)]="status" (change)="changeStatusToPlaced(status)">
+            <label class="ms-3" for="pending">pending</label>
+        </div>
+      </div>
+      
+    </div>
+    <div class="col-9 shadow p-3">
         <table class="table table-hover">
             
             <caption *ngIf="displayNoRecords">No record available</caption>
